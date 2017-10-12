@@ -1,0 +1,6 @@
+config
+data
+log
+tmp
+docker-compose.yml
+*.txt
