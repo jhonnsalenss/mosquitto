@@ -39,4 +39,3 @@ Message publish from client2 to client1
 ```sh
 $ docker inspect <container-name>
 ```
-# mosquitto
