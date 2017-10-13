@@ -2,24 +2,20 @@
 
 ## mosquitto from alpine
 
-### Build docker image
 
+### Run mosquitto broker
 ```sh
-$ docker build -t salenss/mosquitto .
-```
-### Run mosquitto broker on docker
-```sh
-$ docker run --name <container-name> -p 1883:1883 -it salenss/mosquitto /bin/sh
+$ docker run --name mosquitto-broker -p 1883:1883 -it salenss/mosquitto
 ```
 ## Testing mosquitto
 ### RUN client mosquitto docker
 In a terminal window execute client1
 ```sh
-$ docker run --name <client1-name> -p 1884:1883 -it salenss/mosquitto /bin/sh
+$ docker run --name client1 -p 1884:1883 -it salenss/mosquitto /bin/sh
 ```
 In another terminal window execute client2
 ```sh
-$ docker run --name <client2-name> -p 1885:1883 -it salenss/mosquitto /bin/sh
+$ docker run --name client2 -p 1885:1883 -it salenss/mosquitto /bin/sh
 ```
 
 Inside window client1
@@ -37,5 +33,5 @@ Message publish from client2 to client1
 Check ip, in a terminal window
 
 ```sh
-$ docker inspect <container-name>
+$ docker inspect -f "{{ .NetworkSettings.IPAddress }}" mosquitto-broker
 ```
