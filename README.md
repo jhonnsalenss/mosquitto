@@ -30,7 +30,7 @@ $ mosquitto_sub -h <ip-broker> -t <tag-suscribe> -m "hello-world"
 
 Message publish from client2 to client1
 ## Notes
-Check ip, in a terminal window
+Check <ip-broker>, in a terminal window
 
 ```sh
 $ docker inspect -f "{{ .NetworkSettings.IPAddress }}" mosquitto-broker
