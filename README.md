@@ -27,7 +27,7 @@ $ mosquitto_sub -h <ip-broker> -t <tag-suscribe>
 
 Inside window client2
 ```sh
-$ mosquitto_sub -h <ip-broker> -t <tag-suscribe> -m "hello-world"
+$ mosquitto_pub -h <ip-broker> -t <tag-suscribe> -m "hello-world"
 ```
 
 Message publish from client2 to client1
